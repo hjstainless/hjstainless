@@ -96,7 +96,7 @@ export default async function NewsPage({
                     : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
                 }`}
               >
-                {tab.key === "all" ? (locale === "zh" ? "\u5168\u90E8" : "All") : dict.news[tab.labelKey]}
+                {tab.key === "all" ? (locale === "zh" ? "\u5168\u90E8" : "All") : (dict.news as Record<string, string>)[tab.labelKey]}
               </Link>
             ))}
           </div>

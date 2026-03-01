@@ -72,10 +72,10 @@ export default async function IndustriesPage({
                     <Icon className="h-7 w-7 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {dict.industries[ind.key]}
+                    {(dict.industries as Record<string, string>)[ind.key]}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                    {dict.industries[`${ind.key}Desc`]}
+                    {(dict.industries as Record<string, string>)[`${ind.key}Desc`]}
                   </p>
                   <ul className="space-y-2">
                     {features.map((f: string) => (

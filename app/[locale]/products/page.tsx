@@ -91,7 +91,7 @@ export default async function ProductsPage({
                     : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
                 }`}
               >
-                {dict.products[cat.key]}
+                {(dict.products as Record<string, string>)[cat.key]}
               </Link>
             ))}
           </div>
@@ -101,7 +101,7 @@ export default async function ProductsPage({
             <div key={cat.key} className="mb-14 last:mb-0">
               <div className="flex items-center gap-4 mb-6">
                 <h2 className="text-xl sm:text-2xl font-bold text-foreground">
-                  {dict.products[cat.key]}
+                  {(dict.products as Record<string, string>)[cat.key]}
                 </h2>
                 <div className="h-px flex-1 bg-border" />
               </div>
@@ -111,16 +111,16 @@ export default async function ProductsPage({
                 <div className="relative h-64 lg:h-auto lg:row-span-2 rounded-lg overflow-hidden">
                   <Image
                     src={cat.image}
-                    alt={dict.products[cat.key]}
+                    alt={(dict.products as Record<string, string>)[cat.key]}
                     fill
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-primary-dark/50 flex flex-col items-center justify-center p-6 text-center">
                     <h3 className="text-xl font-bold text-section-dark-text mb-2">
-                      {dict.products[cat.key]}
+                      {(dict.products as Record<string, string>)[cat.key]}
                     </h3>
                     <p className="text-sm text-section-dark-text/70 leading-relaxed">
-                      {dict.products[`${cat.key}Desc`]}
+                      {(dict.products as Record<string, string>)[`${cat.key}Desc`]}
                     </p>
                   </div>
                 </div>
